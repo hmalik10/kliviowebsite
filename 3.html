@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Klivio Technology Services | Elevate. Advise. Accelerate.</title>
+  <meta name="description" content="Klivio is a global IT consulting firm helping organisations modernise technology, accelerate growth, and build competitive advantage through strategy, cloud, data, AI, cybersecurity, and managed services." />
+  <style>
+    :root{
+      --black:#070707;
+      --ink:#111827;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --soft:#f7f7f4;
+      --orange:#f97316;
+      --orange-dark:#c2410c;
+      --white:#ffffff;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      color:var(--ink);
+      background:var(--white);
+      line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--max);margin:0 auto;padding:0 28px}
+
+    header{
+      position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);
+      backdrop-filter:blur(14px);border-bottom:1px solid var(--line);
+    }
+    .nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .brand img{height:48px;width:auto;display:block}
+    .brand-text{font-weight:800;letter-spacing:.02em;font-size:15px;text-transform:uppercase}
+    .nav-links{display:flex;align-items:center;gap:26px;font-size:14px;color:#374151;font-weight:600}
+    .nav-links a:hover{color:var(--orange)}
+    .nav-cta{padding:11px 18px;border:1px solid var(--ink);font-weight:700}
+    .nav-cta:hover{background:var(--ink);color:#fff!important}
+
+    .hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#fff 0%,#fafaf8 100%)}
+    .hero:before{
+      content:"";position:absolute;right:-170px;top:40px;width:520px;height:520px;
+      border:90px solid rgba(249,115,22,.14);border-radius:50%;
+    }
+    .hero-grid{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:72px;align-items:center;padding:96px 0 92px}
+    .eyebrow{font-size:13px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);margin-bottom:18px}
+    h1{font-size:clamp(44px,6vw,78px);line-height:.98;letter-spacing:-.055em;color:#050505;margin-bottom:28px;max-width:850px}
+    .hero p{font-size:21px;line-height:1.55;color:#374151;max-width:720px;margin-bottom:34px}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 22px;font-weight:800;border:1px solid var(--ink);transition:.2s ease}
+    .btn-primary{background:var(--ink);color:#fff}
+    .btn-primary:hover{background:var(--orange);border-color:var(--orange)}
+    .btn-secondary{background:#fff;color:var(--ink)}
+    .btn-secondary:hover{background:var(--ink);color:#fff}
+    .hero-card{background:#111;color:#fff;padding:38px;border-radius:2px;box-shadow:0 30px 80px rgba(0,0,0,.18)}
+    .hero-card img{height:82px;background:#fff;padding:10px 14px;margin-bottom:36px;max-width:100%}
+    .hero-card h2{font-size:30px;line-height:1.15;letter-spacing:-.03em;margin-bottom:18px}
+    .hero-card p{font-size:16px;color:#d1d5db;margin:0}
+    .metric-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .metric{background:#fff;padding:34px 28px;text-align:center}
+    .metric strong{display:block;font-size:16px;text-transform:uppercase;letter-spacing:.12em;color:#111;margin-bottom:8px}
+    .metric span{font-size:14px;color:var(--muted)}
+
+    section{padding:92px 0}
+    .section-head{display:grid;grid-template-columns:.7fr 1fr;gap:50px;align-items:start;margin-bottom:54px}
+    .section-kicker{font-size:13px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--orange)}
+    h2{font-size:clamp(32px,4vw,52px);line-height:1.05;letter-spacing:-.045em;color:#080808}
+    .lead{font-size:19px;color:#4b5563;line-height:1.65}
+
+    .capability-map{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--line)}
+    .capability{padding:32px 24px;min-height:245px;border-right:1px solid var(--line);background:#fff}
+    .capability:last-child{border-right:none}
+    .capability h3{font-size:19px;margin-bottom:20px;letter-spacing:-.02em}
+    .capability ul{list-style:none;display:grid;gap:12px;color:#4b5563;font-size:15px}
+    .capability li{padding-left:18px;position:relative}
+    .capability li:before{content:"";width:7px;height:7px;background:var(--orange);position:absolute;left:0;top:9px}
+
+    .dark{background:#090909;color:#fff}
+    .dark h2{color:#fff}.dark .lead{color:#d1d5db}.dark .section-kicker{color:#fb923c}
+    .industries{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#27272a;border:1px solid #27272a}
+    .industry{background:#111;padding:34px;min-height:170px}
+    .industry h3{font-size:22px;margin-bottom:12px}.industry p{color:#cbd5e1;font-size:15px}
+
+    .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+    .why-card{background:var(--soft);padding:32px;border-left:4px solid var(--orange);min-height:230px}
+    .why-card h3{font-size:22px;margin-bottom:14px}.why-card p{color:#4b5563}
+
+    .story{display:grid;grid-template-columns:.95fr 1.05fr;gap:60px;align-items:center}
+    .quote{font-size:33px;line-height:1.2;letter-spacing:-.035em;font-weight:800;color:#0b0b0b;margin-bottom:24px}
+    .steps{display:grid;gap:14px}
+    .step{display:flex;align-items:center;gap:18px;border:1px solid var(--line);padding:20px;background:#fff}
+    .step-number{width:42px;height:42px;background:var(--orange);color:#fff;display:grid;place-items:center;font-weight:900}
+    .step strong{font-size:18px}.step span{display:block;color:var(--muted);font-size:14px;margin-top:2px}
+
+    .engagements{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .engagement{border:1px solid var(--line);padding:34px;background:#fff;min-height:260px}
+    .engagement h3{font-size:25px;margin-bottom:16px}.engagement p{color:#4b5563;margin-bottom:22px}
+    .engagement strong{font-size:13px;text-transform:uppercase;letter-spacing:.14em;color:var(--orange)}
+
+    .insights{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .insight{border-top:3px solid var(--ink);padding:24px 0}
+    .insight h3{font-size:20px;line-height:1.25;margin-bottom:12px}.insight p{font-size:15px;color:#6b7280}
+
+    .cta{background:var(--orange);color:#111;padding:72px 0}
+    .cta-wrap{display:flex;align-items:center;justify-content:space-between;gap:34px}
+    .cta h2{color:#111;max-width:780px}.cta p{font-size:19px;margin-top:16px;color:#311100;max-width:720px}
+    .cta .btn{background:#111;color:#fff;border-color:#111;white-space:nowrap}.cta .btn:hover{background:#fff;color:#111}
+
+    footer{background:#050505;color:#fff;padding:56px 0 34px}
+    .footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px;align-items:start}
+    .footer-logo img{height:62px;background:#fff;padding:8px 12px;margin-bottom:18px}
+    footer p, footer a{color:#a1a1aa;font-size:14px}
+    .footer-links{display:grid;gap:10px}.footer-links a:hover{color:#fb923c}
+    .footer-title{font-size:13px;text-transform:uppercase;letter-spacing:.16em;color:#fff;font-weight:900;margin-bottom:14px}
+    .footer-credit{margin-top:36px;padding-top:22px;border-top:1px solid rgba(255,255,255,.14);text-align:center;font-size:14px;color:#9ca3af}
+    .footer-credit a{color:#fb923c;font-weight:800}.footer-credit a:hover{text-decoration:underline}
+
+    @media(max-width:980px){
+      .nav-links{display:none}.hero-grid,.section-head,.story{grid-template-columns:1fr}.capability-map{grid-template-columns:1fr 1fr}.capability{border-bottom:1px solid var(--line)}
+      .industries,.why-grid,.engagements,.insights,.footer-grid{grid-template-columns:1fr 1fr}.cta-wrap{align-items:flex-start;flex-direction:column}
+    }
+    @media(max-width:640px){
+      .container{padding:0 20px}.hero-grid{padding:62px 0}.metric-row,.capability-map,.industries,.why-grid,.engagements,.insights,.footer-grid{grid-template-columns:1fr}
+      h1{font-size:44px}.hero p{font-size:18px}.section-head{gap:18px}section{padding:68px 0}.brand-text{display:none}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Klivio home">
+        <img src="Logo.jpg" alt="Klivio Technology Services" />
+        <span class="brand-text">Klivio Technology Services</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#services">Services</a>
+        <a href="#industries">Industries</a>
+        <a href="#about">About</a>
+        <a href="#insights">Insights</a>
+        <a class="nav-cta" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Global IT Consulting</div>
+          <h1>Technology Strategy & Transformation for Organisations Ready to Scale</h1>
+          <p>Klivio helps ambitious organisations modernise technology, transform operations, and accelerate growth through strategy, architecture, cloud, data, AI, cybersecurity, and managed services.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Schedule a Consultation</a>
+            <a class="btn btn-secondary" href="#services">Explore Capabilities</a>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Klivio positioning">
+          <img src="Logo.jpg" alt="Klivio Technology Services" />
+          <h2>Elevate. Advise. Accelerate.</h2>
+          <p>We are not just a vendor. We are a technology partner for the long climb ahead — from strategy to execution, from local ambition to global scale.</p>
+        </aside>
+      </div>
+      <div class="metric-row">
+        <div class="metric"><strong>Strategy</strong><span>Clear technology direction aligned to business goals</span></div>
+        <div class="metric"><strong>Execution</strong><span>Transformation delivered with discipline and speed</span></div>
+        <div class="metric"><strong>Scale</strong><span>Modern platforms built for resilience and growth</span></div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">What We Do</div>
+          <div>
+            <h2>Capability architecture for modern enterprise technology.</h2>
+            <p class="lead">Klivio brings together advisory depth and engineering execution across the full technology lifecycle — from board-level strategy to reliable operations.</p>
+          </div>
+        </div>
+        <div class="capability-map">
+          <div class="capability"><h3>Strategy</h3><ul><li>IT Strategy & Consulting</li><li>Enterprise Architecture</li><li>Technology Roadmaps</li><li>Operating Model Design</li></ul></div>
+          <div class="capability"><h3>Transformation</h3><ul><li>Digital Transformation</li><li>Legacy Modernisation</li><li>Process Automation</li><li>Platform Reinvention</li></ul></div>
+          <div class="capability"><h3>Engineering</h3><ul><li>Cloud Solutions</li><li>Application Modernisation</li><li>Integration Services</li><li>DevOps Enablement</li></ul></div>
+          <div class="capability"><h3>Intelligence</h3><ul><li>Data Strategy</li><li>AI Consulting</li><li>Analytics Platforms</li><li>Decision Intelligence</li></ul></div>
+          <div class="capability"><h3>Operations</h3><ul><li>Managed IT Services</li><li>Cybersecurity Advisory</li><li>Governance</li><li>Continuous Optimisation</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark" id="industries">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Industries</div>
+          <div>
+            <h2>Built for organisations where technology is now the business.</h2>
+            <p class="lead">We work with leaders who need practical transformation, not theory — helping teams reduce complexity, improve resilience, and unlock growth.</p>
+          </div>
+        </div>
+        <div class="industries">
+          <div class="industry"><h3>Financial Services</h3><p>Secure, scalable platforms for digital-first financial organisations.</p></div>
+          <div class="industry"><h3>Manufacturing</h3><p>Connected systems, cloud platforms, and data-led operational transformation.</p></div>
+          <div class="industry"><h3>Healthcare</h3><p>Modern technology foundations for regulated, patient-centric ecosystems.</p></div>
+          <div class="industry"><h3>Retail</h3><p>Digital commerce, customer platforms, and intelligent operations.</p></div>
+          <div class="industry"><h3>Technology</h3><p>Architecture, product engineering, and cloud scale for growth businesses.</p></div>
+          <div class="industry"><h3>Public Sector</h3><p>Reliable digital services with governance, security, and measurable impact.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Why Klivio</div>
+          <div>
+            <h2>Clear advice. High ambition. Partnership mindset.</h2>
+            <p class="lead">Klivio is built for businesses that refuse to stand still. We combine deep technology expertise with sharp business thinking to help organisations move faster, scale smarter, and compete globally.</p>
+          </div>
+        </div>
+        <div class="why-grid">
+          <div class="why-card"><h3>Clarity</h3><p>We cut through complexity and give direct, practical advice that leadership teams can act on.</p></div>
+          <div class="why-card"><h3>Ambition</h3><p>We raise the bar for every client engagement — strategically, technically, and operationally.</p></div>
+          <div class="why-card"><h3>Partnership</h3><p>We work beside your teams with transparency, trust, and shared ownership of outcomes.</p></div>
+          <div class="why-card"><h3>Global Mindset</h3><p>We bring world-class thinking across borders, time zones, industries, and technology ecosystems.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:var(--soft)">
+      <div class="container story">
+        <div>
+          <div class="section-kicker">Brand Story</div>
+          <div class="quote">Great technology does not just solve problems — it opens possibilities.</div>
+          <p class="lead">Klivio is born from the idea of the climb: the relentless pursuit of higher ground. Every strategy we craft, every system we build, and every problem we solve is a step upward for your business.</p>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="step-number">1</div><div><strong>Vision</strong><span>Define the next level of business and technology ambition.</span></div></div>
+          <div class="step"><div class="step-number">2</div><div><strong>Strategy</strong><span>Create clear technology direction and practical roadmaps.</span></div></div>
+          <div class="step"><div class="step-number">3</div><div><strong>Transformation</strong><span>Modernise platforms, operating models, and delivery practices.</span></div></div>
+          <div class="step"><div class="step-number">4</div><div><strong>Scale</strong><span>Build resilient foundations for growth, speed, and security.</span></div></div>
+          <div class="step"><div class="step-number">5</div><div><strong>Growth</strong><span>Accelerate measurable business value through technology.</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Engagement Models</div>
+          <div>
+            <h2>Flexible support for every stage of the climb.</h2>
+            <p class="lead">Whether you need senior advisory, hands-on transformation, or ongoing technology operations, Klivio engages with the right level of ownership.</p>
+          </div>
+        </div>
+        <div class="engagements">
+          <div class="engagement"><strong>Advisory</strong><h3>Executive Guidance</h3><p>Technology strategy, architecture review, digital roadmap, governance, and investment prioritisation.</p></div>
+          <div class="engagement"><strong>Transformation</strong><h3>Delivery Partnership</h3><p>Cloud migration, digital reinvention, data and AI enablement, application modernisation, and integration programmes.</p></div>
+          <div class="engagement"><strong>Managed Services</strong><h3>Reliable Operations</h3><p>Proactive IT management, platform optimisation, cybersecurity advisory, service governance, and continuous improvement.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="insights" style="background:var(--soft)">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Insights</div>
+          <div>
+            <h2>Thinking for leaders navigating digital change.</h2>
+            <p class="lead">The strongest consulting brands educate before they sell. These insight themes can become future articles, newsletters, and LinkedIn posts.</p>
+          </div>
+        </div>
+        <div class="insights">
+          <div class="insight"><h3>AI Strategy</h3><p>How enterprises move from experimentation to governed AI value.</p></div>
+          <div class="insight"><h3>Cloud Modernisation</h3><p>Building scalable, secure, and cost-aware cloud foundations.</p></div>
+          <div class="insight"><h3>Enterprise Architecture</h3><p>Aligning platforms, systems, data, and operating models.</p></div>
+          <div class="insight"><h3>Cybersecurity</h3><p>Risk-based technology protection from strategy to execution.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="container cta-wrap">
+        <div>
+          <h2>Ready for the next stage of growth?</h2>
+          <p>Let us discuss how Klivio can help you elevate your technology strategy, accelerate transformation, and build lasting advantage.</p>
+          <p style="margin-top:18px;font-weight:800;color:#111;">Email: <a href="mailto:Services@theklivio.com">Services@theklivio.com</a> &nbsp;|&nbsp; Phone: <a href="tel:+919930217260">+91 99302 17260</a></p>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a class="btn" href="mailto:Services@theklivio.com">Start a Conversation</a>
+          <a class="btn" href="tel:+919930217260">Call Klivio</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo"><img src="Logo.jpg" alt="Klivio Technology Services" /></div>
+          <p>Klivio Technology Services</p>
+          <p>Elevate. Advise. Accelerate.</p>
+        </div>
+        <div>
+          <div class="footer-title">Company</div>
+          <div class="footer-links">
+            <a href="#services">Services</a>
+            <a href="#industries">Industries</a>
+            <a href="#about">About</a>
+            <a href="#insights">Insights</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-title">Contact</div>
+          <p>Email: <a href="mailto:Services@theklivio.com">Services@theklivio.com</a></p>
+          <p>Phone: <a href="tel:+919930217260">+91 99302 17260</a></p>
+          <p style="margin-top:12px">klivio.com</p>
+        </div>
+      </div>
+      <div class="footer-credit">
+        © 2026 Klivio Technology Services. All Rights Reserved. &nbsp;|&nbsp;
+        Website designed and developed by <a href="https://99s.site" target="_blank" rel="noopener">99 Seconds AI (99s.site)</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

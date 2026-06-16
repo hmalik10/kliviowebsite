@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Klivio Technology Services — Elevate. Advise. Accelerate.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'GA_MEASUREMENT_ID');
+</script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --orange:    #F05A1A;
+    --orange-lt: #FF7A3D;
+    --navy:      #0F1624;
+    --navy-mid:  #16203A;
+    --navy-lite: #1E2D4E;
+    --slate:     #8B97B0;
+    --white:     #FFFFFF;
+    --off-white: #F4F6FA;
+    --border:    rgba(255,255,255,0.07);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--navy);
+    color: var(--white);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ─────────────────────────────────────────── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5vw;
+    height: 72px;
+    background: rgba(15,22,36,0.92);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .nav-logo img { height: 44px; width: auto; }
+
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a {
+    font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--slate); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--white); }
+
+  .nav-cta {
+    font-size: 0.82rem; font-weight: 600; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--white); text-decoration: none;
+    border: 1px solid var(--orange); border-radius: 3px;
+    padding: 9px 22px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .nav-cta:hover { background: var(--orange); color: var(--white); }
+
+  /* ── HERO ─────────────────────────────────────────── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 120px 5vw 80px;
+    overflow: hidden;
+  }
+
+  /* Geometric accent — the signature element */
+  .hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background:
+      radial-gradient(ellipse 60% 80% at 75% 50%, rgba(240,90,26,0.12) 0%, transparent 70%),
+      linear-gradient(160deg, var(--navy) 0%, var(--navy-mid) 100%);
+  }
+
+  /* Animated circuit lines — nod to the logo motif */
+  .hero-grid {
+    position: absolute; inset: 0; z-index: 0;
+    background-image:
+      linear-gradient(rgba(240,90,26,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(240,90,26,0.06) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 70% 70% at 70% 50%, black 20%, transparent 80%);
+  }
+
+  .hero-inner {
+    position: relative; z-index: 1;
+    max-width: 1200px; width: 100%;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--orange);
+    margin-bottom: 24px;
+  }
+  .hero-eyebrow::before {
+    content: ''; display: block; width: 28px; height: 1px; background: var(--orange);
+  }
+
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.8rem, 5vw, 4.4rem);
+    font-weight: 800;
+    line-height: 1.06;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    background: linear-gradient(135deg, var(--orange) 0%, var(--orange-lt) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+
+  .hero-sub {
+    font-size: 1.08rem; font-weight: 300; color: var(--slate);
+    line-height: 1.75; max-width: 460px; margin-bottom: 44px;
+  }
+
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--orange); color: var(--white);
+    font-size: 0.88rem; font-weight: 600; letter-spacing: 0.04em;
+    text-decoration: none; border-radius: 3px; padding: 14px 30px;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .btn-primary:hover { background: var(--orange-lt); transform: translateY(-1px); }
+
+  .btn-ghost {
+    display: inline-flex; align-items: center; gap: 8px;
+    color: var(--slate); font-size: 0.88rem; font-weight: 500;
+    text-decoration: none; letter-spacing: 0.04em; padding: 14px 4px;
+    border-bottom: 1px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .btn-ghost:hover { color: var(--white); border-color: var(--orange); }
+
+  /* Hero right: stat card cluster */
+  .hero-stats {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+  }
+  .stat-card {
+    background: var(--navy-lite);
+    padding: 32px 28px;
+    border: 1px solid var(--border);
+    transition: border-color 0.2s;
+  }
+  .stat-card:hover { border-color: rgba(240,90,26,0.3); }
+  .stat-card:first-child { border-radius: 8px 0 0 0; }
+  .stat-card:nth-child(2) { border-radius: 0 8px 0 0; }
+  .stat-card:nth-child(3) { border-radius: 0 0 0 8px; }
+  .stat-card:last-child { border-radius: 0 0 8px 0; }
+
+  .stat-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 2.6rem; font-weight: 800;
+    color: var(--white); line-height: 1;
+    margin-bottom: 6px;
+  }
+  .stat-num span { color: var(--orange); }
+  .stat-label {
+    font-size: 0.78rem; font-weight: 400; color: var(--slate);
+    letter-spacing: 0.06em; text-transform: uppercase; line-height: 1.4;
+  }
+
+  /* ── MARQUEE ─────────────────────────────────────── */
+  .marquee-wrap {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: var(--navy-mid);
+    padding: 14px 0; overflow: hidden;
+  }
+  .marquee-track {
+    display: flex; gap: 0; width: max-content;
+    animation: marquee 30s linear infinite;
+  }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .marquee-item {
+    white-space: nowrap; padding: 0 36px;
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--slate);
+    display: flex; align-items: center; gap: 36px;
+  }
+  .marquee-item::after { content: '◆'; color: var(--orange); font-size: 0.5rem; }
+
+  /* ── SECTIONS SHARED ─────────────────────────────── */
+  section { padding: 100px 5vw; }
+  .section-label {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--orange); margin-bottom: 14px;
+  }
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 700; line-height: 1.12; letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+  .section-body {
+    font-size: 1.02rem; font-weight: 300; color: var(--slate);
+    line-height: 1.8; max-width: 580px;
+  }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+
+  /* ── ABOUT ───────────────────────────────────────── */
+  #about { background: var(--navy-mid); }
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
+    margin-top: 60px;
+  }
+  .about-quote {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-style: italic; color: var(--white); line-height: 1.5;
+    border-left: 3px solid var(--orange); padding-left: 28px;
+    margin-bottom: 32px;
+  }
+  .about-body { font-size: 1rem; color: var(--slate); line-height: 1.85; }
+  .about-body p + p { margin-top: 18px; }
+
+  .about-pillars { display: flex; flex-direction: column; gap: 0; }
+  .pillar {
+    display: flex; gap: 20px; padding: 28px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .pillar:first-child { border-top: 1px solid var(--border); }
+  .pillar-icon {
+    width: 40px; height: 40px; flex-shrink: 0;
+    background: rgba(240,90,26,0.12);
+    border-radius: 4px; display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+  }
+  .pillar-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.95rem; font-weight: 700; margin-bottom: 4px;
+  }
+  .pillar-desc { font-size: 0.88rem; color: var(--slate); line-height: 1.6; }
+
+  /* ── SERVICES ────────────────────────────────────── */
+  #services { background: var(--navy); }
+  .services-header {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: end;
+    margin-bottom: 56px;
+  }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+  }
+  .service-card {
+    background: var(--navy-lite);
+    padding: 40px 32px;
+    border: 1px solid var(--border);
+    position: relative; overflow: hidden;
+    transition: border-color 0.25s, transform 0.25s;
+    cursor: default;
+  }
+  .service-card:hover { border-color: rgba(240,90,26,0.4); transform: translateY(-3px); }
+  .service-card::before {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--orange), var(--orange-lt));
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .service-card:hover::before { transform: scaleX(1); }
+
+  .service-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.72rem; font-weight: 700; color: var(--orange);
+    letter-spacing: 0.12em; margin-bottom: 24px;
+  }
+  .service-icon { font-size: 1.8rem; margin-bottom: 16px; }
+  .service-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem; font-weight: 700; margin-bottom: 12px;
+  }
+  .service-desc { font-size: 0.88rem; color: var(--slate); line-height: 1.7; }
+
+  /* ── WHY KLIVIO ──────────────────────────────────── */
+  #why { background: var(--navy-mid); }
+  .why-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+    margin-top: 60px;
+  }
+  .why-left {}
+  .why-list { list-style: none; margin-top: 36px; }
+  .why-item {
+    display: flex; gap: 16px; padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .why-item:first-child { border-top: 1px solid var(--border); }
+  .why-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--orange); flex-shrink: 0; margin-top: 7px;
+  }
+  .why-text { font-size: 0.95rem; color: var(--slate); line-height: 1.65; }
+  .why-text strong { color: var(--white); font-weight: 600; }
+
+  .why-right { position: relative; }
+  .why-accent-box {
+    background: linear-gradient(135deg, var(--navy-lite) 0%, rgba(240,90,26,0.08) 100%);
+    border: 1px solid rgba(240,90,26,0.2);
+    border-radius: 8px; padding: 48px 40px;
+  }
+  .big-quote {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-style: italic; line-height: 1.55;
+    margin-bottom: 28px;
+  }
+  .big-quote em { color: var(--orange); font-style: normal; }
+  .quote-attr {
+    font-size: 0.78rem; font-weight: 600; color: var(--slate);
+    letter-spacing: 0.12em; text-transform: uppercase;
+  }
+
+  /* ── CONTACT ─────────────────────────────────────── */
+  #contact {
+    background: var(--navy);
+    border-top: 1px solid var(--border);
+  }
+  .contact-inner {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
+  }
+  .contact-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    font-weight: 700; line-height: 1.12; margin-bottom: 20px;
+  }
+  .contact-body { font-size: 1rem; color: var(--slate); line-height: 1.8; margin-bottom: 40px; }
+
+  .contact-details { display: flex; flex-direction: column; gap: 20px; }
+  .contact-item { display: flex; gap: 16px; align-items: flex-start; }
+  .contact-icon {
+    width: 40px; height: 40px; flex-shrink: 0;
+    background: rgba(240,90,26,0.12); border-radius: 4px;
+    display: flex; align-items: center; justify-content: center; font-size: 1rem;
+  }
+  .contact-lbl {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--slate); margin-bottom: 4px;
+  }
+  .contact-val {
+    font-size: 0.95rem; font-weight: 500; color: var(--white);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .contact-val:hover { color: var(--orange); }
+
+  .contact-form { display: flex; flex-direction: column; gap: 16px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-group { display: flex; flex-direction: column; gap: 8px; }
+  .form-label {
+    font-size: 0.75rem; font-weight: 600; color: var(--slate);
+    letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .form-input, .form-textarea {
+    background: var(--navy-lite); border: 1px solid var(--border);
+    border-radius: 3px; padding: 13px 16px;
+    color: var(--white); font-family: 'Inter', sans-serif; font-size: 0.9rem;
+    outline: none; transition: border-color 0.2s;
+    width: 100%;
+  }
+  .form-input::placeholder, .form-textarea::placeholder { color: rgba(139,151,176,0.5); }
+  .form-input:focus, .form-textarea:focus { border-color: var(--orange); }
+  .form-textarea { resize: vertical; min-height: 120px; }
+  .form-submit {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--orange); color: var(--white);
+    font-family: 'Inter', sans-serif; font-size: 0.88rem; font-weight: 600;
+    letter-spacing: 0.04em; border: none; border-radius: 3px;
+    padding: 14px 30px; cursor: pointer; align-self: flex-start;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .form-submit:hover { background: var(--orange-lt); transform: translateY(-1px); }
+
+  /* ── FOOTER ──────────────────────────────────────── */
+  footer {
+    background: var(--navy-mid);
+    border-top: 1px solid var(--border);
+    padding: 32px 5vw;
+    display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    flex-wrap: wrap;
+  }
+  .footer-logo { display: flex; align-items: center; gap: 10px; }
+  .footer-logo img { height: 32px; }
+  .footer-tagline {
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em;
+    color: var(--slate); text-transform: uppercase;
+  }
+  .footer-copy { font-size: 0.78rem; color: var(--slate); }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a {
+    font-size: 0.78rem; color: var(--slate); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--white); }
+
+  /* ── ORANGE LINE DIVIDER ─────────────────────────── */
+  .divider {
+    width: 100%; height: 1px;
+    background: linear-gradient(90deg, var(--orange) 0%, transparent 60%);
+    margin-bottom: 60px;
+  }
+
+  /* ── SCROLL ANIMATION ────────────────────────────── */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* ── MOBILE ──────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+    .hero-stats { order: -1; grid-template-columns: 1fr 1fr; }
+    .about-grid, .why-grid, .contact-inner, .services-header { grid-template-columns: 1fr; gap: 40px; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .nav-links { display: none; }
+  }
+  @media (max-width: 580px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .hero-stats { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track { animation: none; }
+    .reveal { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <img src="Logo.jpg" alt="Klivio Technology Services">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">Why Klivio</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Start the Climb</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Global IT Consulting</div>
+      <h1>Technology that<br><em>opens possibilities</em></h1>
+      <p class="hero-sub">Klivio helps organisations move faster, scale smarter, and compete globally — combining deep technology expertise with sharp business thinking.</p>
+      <div class="hero-actions">
+        <a href="#services" class="btn-primary">Explore Services →</a>
+        <a href="#contact" class="btn-ghost">Talk to us</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-card">
+        <div class="stat-num">6<span>+</span></div>
+        <div class="stat-label">Core Service Practices</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num"><span>∞</span></div>
+        <div class="stat-label">Global Reach, No Borders</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">360<span>°</span></div>
+        <div class="stat-label">Strategy to Execution</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">1<span>st</span></div>
+        <div class="stat-label">Technology Partner, Not a Vendor</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="marquee-item">IT Strategy &amp; Consulting</span>
+    <span class="marquee-item">Digital Transformation</span>
+    <span class="marquee-item">Cloud Solutions</span>
+    <span class="marquee-item">Cybersecurity Advisory</span>
+    <span class="marquee-item">Data &amp; AI Consulting</span>
+    <span class="marquee-item">Managed IT Services</span>
+    <span class="marquee-item">IT Strategy &amp; Consulting</span>
+    <span class="marquee-item">Digital Transformation</span>
+    <span class="marquee-item">Cloud Solutions</span>
+    <span class="marquee-item">Cybersecurity Advisory</span>
+    <span class="marquee-item">Data &amp; AI Consulting</span>
+    <span class="marquee-item">Managed IT Services</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-label">Who We Are</div>
+    <div class="divider"></div>
+    <div class="about-grid">
+      <div class="reveal">
+        <div class="about-quote">"Great technology doesn't just solve problems — it opens possibilities."</div>
+        <div class="about-body">
+          <p>Klivio is born from the idea of the climb. In Scandinavian tradition, <em>kliv</em> means to ascend, to rise with purpose. We added <em>-io</em> to signal what we are: a modern, connected, borderless force in technology consulting.</p>
+          <p>We are not just a vendor. We are your technology partner for the long climb ahead — standing beside you at every stage of the journey, from strategy to execution, from local to global.</p>
+          <p>Our mission is to empower businesses worldwide with technology strategies that are bold in ambition, clear in direction, and built for lasting impact.</p>
+        </div>
+      </div>
+      <div class="about-pillars reveal">
+        <div class="pillar">
+          <div class="pillar-icon">◆</div>
+          <div>
+            <div class="pillar-name">Clarity</div>
+            <div class="pillar-desc">We cut through complexity. Our advice is direct, practical, and always in your best interest — never obscured by jargon.</div>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">◆</div>
+          <div>
+            <div class="pillar-name">Ambition</div>
+            <div class="pillar-desc">We think big, plan smart, and execute with precision. We raise the bar for every client and for ourselves.</div>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">◆</div>
+          <div>
+            <div class="pillar-name">Partnership</div>
+            <div class="pillar-desc">We succeed when you succeed. Every engagement is built on trust, transparency, and shared goals.</div>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">◆</div>
+          <div>
+            <div class="pillar-name">Global Mindset</div>
+            <div class="pillar-desc">World-class thinking across borders, time zones, and industries — brought to every client, everywhere.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <div class="services-header">
+      <div>
+        <div class="section-label">What We Do</div>
+        <h2 class="section-title">Six practices.<br>One partner.</h2>
+      </div>
+      <p class="section-body">From IT strategy through to managed services, we deliver end-to-end technology capability — structured around your goals, not our org chart.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-num">01</div>
+        <div class="service-icon">🗺️</div>
+        <div class="service-name">IT Strategy &amp; Consulting</div>
+        <div class="service-desc">Clear technology roadmaps aligned tightly to your business goals. We translate ambition into executable plans that your entire organisation can move on.</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">02</div>
+        <div class="service-icon">🔄</div>
+        <div class="service-name">Digital Transformation</div>
+        <div class="service-desc">From legacy modernisation to full digital reinvention — we guide organisations through complex, multi-stage transformation programmes with clarity at every step.</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">03</div>
+        <div class="service-icon">☁️</div>
+        <div class="service-name">Cloud Solutions</div>
+        <div class="service-desc">Architecture, migration, and optimisation across AWS, Azure, and GCP. We design cloud environments that are secure, scalable, and cost-efficient by design.</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">04</div>
+        <div class="service-icon">🔒</div>
+        <div class="service-name">Cybersecurity Advisory</div>
+        <div class="service-desc">Proactive, risk-based protection from strategy through to execution. We help you stay ahead of threats — building security postures that scale with your business.</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">05</div>
+        <div class="service-icon">🤖</div>
+        <div class="service-name">Data &amp; AI Consulting</div>
+        <div class="service-desc">Intelligent systems that help you decide faster and act smarter. From data strategy to production AI, we turn your data into a genuine competitive advantage.</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">06</div>
+        <div class="service-icon">⚙️</div>
+        <div class="service-name">Managed IT Services</div>
+        <div class="service-desc">Reliable, proactive management of your IT environment — freeing your teams to focus on innovation while we ensure operational continuity and resilience.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY KLIVIO -->
+<section id="why">
+  <div class="section-inner">
+    <div class="section-label">Why Klivio</div>
+    <div class="divider"></div>
+    <div class="why-grid">
+      <div>
+        <h2 class="section-title reveal">The partner for the<br>long climb ahead.</h2>
+        <ul class="why-list">
+          <li class="why-item reveal">
+            <div class="why-dot"></div>
+            <div class="why-text"><strong>Strategy-first, not tool-first.</strong> We align every technology decision to your business outcomes — not to what happens to be in our portfolio.</div>
+          </li>
+          <li class="why-item reveal">
+            <div class="why-dot"></div>
+            <div class="why-text"><strong>Global expertise, local care.</strong> World-class consulting thinking delivered with the attentiveness of a firm that treats each client as the only one.</div>
+          </li>
+          <li class="why-item reveal">
+            <div class="why-dot"></div>
+            <div class="why-text"><strong>Execution, not just advice.</strong> We see projects through — from the first whiteboard session to live production systems and beyond.</div>
+          </li>
+          <li class="why-item reveal">
+            <div class="why-dot"></div>
+            <div class="why-text"><strong>Relentless standards.</strong> We raise the bar internally first — so that when we raise it for your business, we know exactly what's required.</div>
+          </li>
+          <li class="why-item reveal">
+            <div class="why-dot"></div>
+            <div class="why-text"><strong>Human in approach.</strong> Technology is only as good as the people who wield it. We bring empathy, clarity, and collaboration to every engagement.</div>
+          </li>
+        </ul>
+      </div>
+      <div class="why-right reveal">
+        <div class="why-accent-box">
+          <div class="big-quote">"We are not just a vendor. We are your technology partner for the <em>long climb ahead</em>."</div>
+          <div class="quote-attr">— The Klivio Promise</div>
+          <div style="margin-top:36px; padding-top:28px; border-top:1px solid rgba(255,255,255,0.07);">
+            <div style="font-size:0.78rem; color:var(--slate); letter-spacing:0.12em; text-transform:uppercase; margin-bottom:10px;">Our Vision</div>
+            <div style="font-size:0.95rem; color:var(--white); line-height:1.7;">To be the most trusted global IT consulting partner for organisations ready to rise — innovative in thinking, relentless in execution, human in approach.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-inner">
+      <div class="reveal">
+        <div class="section-label">Get in Touch</div>
+        <h2 class="contact-title">Ready to start<br>the climb?</h2>
+        <p class="contact-body">Whether you're navigating a complex transformation, scaling your infrastructure, or looking for a long-term technology partner — we are ready. Let's talk.</p>
+        <div class="contact-details">
+          <div class="contact-item">
+            <div class="contact-icon">✉</div>
+            <div>
+              <div class="contact-lbl">Email</div>
+              <a href="mailto:Services@theklivio.com" class="contact-val">Services@theklivio.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div>
+              <div class="contact-lbl">Phone</div>
+              <a href="tel:+919930217260" class="contact-val">+91 99302 17260</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🌐</div>
+            <div>
+              <div class="contact-lbl">Web</div>
+              <span class="contact-val">klivio.com</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">First Name</label>
+              <input type="text" class="form-input" id="firstName" placeholder="Jane" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Last Name</label>
+              <input type="text" class="form-input" id="lastName" placeholder="Smith" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Business Email</label>
+            <input type="email" class="form-input" id="email" placeholder="jane@yourcompany.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Organisation</label>
+            <input type="text" class="form-input" id="organisation" placeholder="Your company name" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">How can we help?</label>
+            <textarea class="form-textarea" id="message" placeholder="Tell us about your technology goals or challenges..." required></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Message →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <img src="Logo.jpg" alt="Klivio">
+    <span class="footer-tagline">Elevate · Advise · Accelerate</span>
+  </div>
+  <div class="footer-links">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#why">Why Klivio</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="footer-copy">© 2025 Klivio Technology Services. All rights reserved. | Designed by <a href="https://99s.site" style="color: var(--orange); text-decoration: none;">99 Seconds AI</a></div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => observer.observe(el));
+
+  // Nav scroll shadow
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    nav.style.boxShadow = window.scrollY > 20 ? '0 4px 32px rgba(0,0,0,0.4)' : 'none';
+  });
+
+  // Contact form submission
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const firstName = document.getElementById('firstName').value.trim();
+    const lastName = document.getElementById('lastName').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const organisation = document.getElementById('organisation').value.trim();
+    const messageText = document.getElementById('message').value.trim();
+    
+    // Structure the subject and message
+    const subject = encodeURIComponent(`New Inquiry from ${firstName} ${lastName} - ${organisation}`);
+    const body = encodeURIComponent(
+      `Name: ${firstName} ${lastName}\n` +
+      `Email: ${email}\n` +
+      `Organisation: ${organisation}\n` +
+      `\nMessage:\n${messageText}`
+    );
+    
+    // Send email via mailto link
+    const mailtoLink = `mailto:Services@theklivio.com?subject=${subject}&body=${body}`;
+    window.location.href = mailtoLink;
+    
+    // Reset form after submission
+    this.reset();
+    alert('Thank you for reaching out! We will get back to you shortly.');
+  });
+</script>
+</body>
+</html>
